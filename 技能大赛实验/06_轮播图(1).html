@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .banner {
+            width: 80%;
+            height: 500px;
+            background-color: red;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .banner>ul {
+            width: 100%;
+            height: 100%;
+
+            position: relative;
+        }
+
+        .banner>ul>li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .banner>ul>li.active {
+            opacity: 1;
+        }
+
+        .banner>ol {
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            bottom: 10%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner>ol>li img {
+            width: 100px;
+            margin: 0 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 10px 10px 30px black;
+
+        }
+
+        @media screen and (max-width:1200px) {}
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <!-- 图片区域 -->
+        <ul>
+            <li class="active"><img src="./imgs/01.jpg" alt=""></li>
+            <li><img src="./imgs/02.jpg" alt=""></li>
+            <li><img src="./imgs/03.jpg" alt=""></li>
+            <li><img src="./imgs/04.jpg" alt=""></li>
+        </ul>
+        <!-- 焦点区域 -->
+        <ol>
+            <li><img src="./imgs/01.jpg" alt=""></li>
+            <li><img src="./imgs/02.jpg" alt=""></li>
+            <li><img src="./imgs/03.jpg" alt=""></li>
+            <li><img src="./imgs/04.jpg" alt=""></li>
+        </ol>
+    </div>
+    <script>
+        var banner = document.querySelector(".banner")
+        var imgs = document.querySelectorAll(".banner>ul>li")
+        var point = document.querySelectorAll(".banner>ol>li")
+        var a = 0
+        function str1() {
+            (point[0].onclick = function () {
+                for (var i = 0; i < imgs.length; i++) imgs[i].className = "";
+                imgs[0].className = "active";
+            })
+                (point[1].onclick = function () {
+                    for (var i = 0; i < imgs.length; i++) imgs[i].className = "";
+                    imgs[1].className = "active";
+                }),
+                (point[2].onclick = function () {
+                    for (var i = 0; i < imgs.length; i++) imgs[i].className = "";
+                    imgs[2].className = "active";
+                }),
+                (point[3].onclick = function () {
+                    for (var i = 0; i < imgs.length; i++) imgs[i].className = "";
+                    imgs[3].className = "active";
+                });
+        }
+        str1()
+        function str2() {
+            a++
+            if(a>4){
+                a = 1
+            }
+            console.log(a)
+            imgs[a].style.opacity = "1"
+        }
+        // setInterval(str2,1000)
+    </script>
+</body>
+
+</html>

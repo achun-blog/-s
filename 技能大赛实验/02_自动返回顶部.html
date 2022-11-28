@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .go-top {
+            width: 50px;
+            height: 50px;
+            background-color: #ea5700;
+            font-size: 20px;
+            text-align: center;
+            line-height: 25px;
+            color: #fff;
+            cursor: pointer;
+
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="go-top">返回顶部</div>
+    <script>
+        var gotop = document.querySelector(".go-top")
+        window.onscroll = function () {
+            var height = document.documentElement.scrollTop || document.body.scrollTop
+            if (height >= 300) {
+                gotop.style.display = 'block'
+                console.log("block")
+            }
+            else {
+                gotop.style.display = "none"
+                console.log("none")
+            }
+        }
+        gotop.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+    </script>
+</body>
+
+</html>

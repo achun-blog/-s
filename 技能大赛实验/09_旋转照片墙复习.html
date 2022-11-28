@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mm{
+            width: 1400px;
+            height: 600px;
+            /* background-color: red; */
+            margin: 0 auto;
+            perspective: 1500px;
+        }
+        .banner{
+            width: 320px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            margin-top: 200px;
+            animation: sss 20s infinite linear;
+            margin: 0 auto;
+            margin-top: 300px;
+            cursor: pointer;
+        }
+        .banner:hover{
+            animation-play-state: paused;
+        }
+        @keyframes sss{
+            0%{
+                transform: rotateY(0deg);
+            }
+            100%{
+                transform: rotateY(360deg);
+            }
+        }
+        .banner>img{
+            width: 320px;
+            height: 200px;
+            position: absolute;
+        }
+        .banner img:nth-child(1){
+            transform: translateZ(400px);
+        }
+        .banner img:nth-child(2){
+            transform: rotateY(60deg) translateZ(400px);
+        }
+        .banner img:nth-child(3){
+            transform: rotateY(120deg) translateZ(400px);
+        }
+        .banner img:nth-child(4){
+            transform: rotateY(180deg) translateZ(400px);
+        }
+        .banner img:nth-child(5){
+            transform: rotateY(240deg) translateZ(400px);
+        }
+        .banner img:nth-child(6){
+            transform: rotateY(300deg) translateZ(400px);
+        }
+    </style>
+</head>
+<body>
+    <div class="mm">
+        <div class="banner">
+            <img src="./imgs/01.jpg" alt="">
+            <img src="./imgs/02.jpg" alt="">
+            <img src="./imgs/03.jpg" alt="">
+            <img src="./imgs/04.jpg" alt="">
+            <img src="./imgs/05.jpg" alt="">
+            <img src="./imgs/06.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var he = window.innerHeight
+        var hr = window.innerWidth
+    //  浏览器窗口的内部高度:
+    //  window.innerHeight
+    //  浏览器窗口的内部宽度:
+    //  window.innerWidth
+
+        console.log(he)
+        console.log(hr)
+    </script>
+</body>
+</html>
